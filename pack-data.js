@@ -14,10 +14,11 @@ data = [
     005333000, // orderlist chn 2
     021212120, // orderlist chn 3
     044440440, // orderlist chn 4
-    066477500]; // chord progression
+    064707500, // chord progression and chan speeds
+    06];       // last chan speed
 m = (h, j) => data[h] >> (j | 0) * 3 & 7;
 str = "";
-for (h = 0; h < 10; h++)
+for (h = 0; h < 11; h++)
     for (j = 0; j < 8; j += 2)
         str += String.fromCharCode((m(h, j + 1) << 3) + m(h, j) + 32)
 console.log("'" + str + "'"); // the empty spaces can be dropped
